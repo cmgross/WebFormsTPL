@@ -21,13 +21,13 @@ namespace WebFormsTPL
             int.TryParse(txtNumberOfThings.Text, out numberOfObjects);
 
             //sequential production code example
-            //List<Builder> results = Builder.LoadBuilders(numberOfObjects);
+            List<Builder> results = Builder.LoadBuilders(numberOfObjects);
 
             //attempt at using parallelism to load these quicker
             //List<Builder> results = Builder.LoadBuildersInParallel(numberOfObjects);
 
             //attempt at using tasks to load these quicker
-            List<Builder> results = Builder.LoadBuildersWithTasks(numberOfObjects);
+            //List<Builder> results = Builder.LoadBuildersWithTasks(numberOfObjects);
 
             gvResults.DataSource = results;
             gvResults.DataBind();
