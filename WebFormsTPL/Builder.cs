@@ -41,7 +41,7 @@ namespace WebFormsTPL
                 buildersToLoad.Add(new Builder { Name = "Builder" + i, Status = "Status" + i });
             }
 
-            Parallel.ForEach(buildersToLoad, new ParallelOptions { MaxDegreeOfParallelism = 2 }, currentBuilder =>
+            Parallel.ForEach(buildersToLoad, new ParallelOptions { MaxDegreeOfParallelism = 100 }, currentBuilder =>
             {
               //database load/instansiation of objects
                Thread.Sleep(1000);
